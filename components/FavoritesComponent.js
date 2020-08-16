@@ -27,9 +27,26 @@ class Favorites extends Component {
         const renderFavoriteItem = ({item}) => {
             const rightButton = [
                 {
-                    text: 'Delete',
+                    text: 'Delete', 
                     type: 'delete',
-                    onPress: () => this.props.deleteFavorite(item.id)
+                    onPress: () => {
+                        Alert.alert(
+                            'Delete Favorite?',
+                            'Are you sure you wish to delete the favorite campsite ' + item.name + '?',
+                            [
+                                { 
+                                    text: 'Cancel', 
+                                    onPress: () => console.log(item.name + 'Not Deleted'),
+                                    style: ' cancel'
+                                },
+                                {
+                                    text: 'OK',
+                                    onPress: () => this.props.deleteFavorite(item.id)
+                                }
+                            ],
+                            { cancelable: false }
+                        );
+                    }
                 }
             ];
 

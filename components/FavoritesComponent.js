@@ -14,7 +14,9 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = {    deleteFavorite: campsiteId => (deleteFavorite(campsiteId))};
+const mapDispatchToProps = {    
+    deleteFavorite: campsiteId => (deleteFavorite(campsiteId))
+};
 
 class Favorites extends Component {
 
